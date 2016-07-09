@@ -23,6 +23,7 @@ cmds:	SHOW CMD        { printf("...SHOW %s\n", $2.s); }
 		| END			{ printf("...Protocol END\n"); }
 		| SHOW HELP		{ printf("...Help Cmds"); }
 		| SHOW			{ printf("...Please enter param"); }
+		| CMD			{ printf("...Invalid command %s\n", $1.s); }
 		;
 
 %%
