@@ -18,9 +18,11 @@ lines:	expr NL
 expr:   PROTOCOL BGP     { printf("Set protocol to BGP\n"); }
 		| PROTOCOL ERROR   { printf("Set protocol error\n"); }
 		;
-cmds:	SHOW CMD        { printf("SHOW %s\n", $2.s); }		
-		| HELP			{ printf("HELP\n"); }
-		| END			{ printf("END\n"); }
+cmds:	SHOW CMD        { printf("...SHOW %s\n", $2.s); }		
+		| HELP			{ printf("...HELP\n"); }
+		| END			{ printf("...Protocol END\n"); }
+		| SHOW HELP		{ printf("...Help Cmds"); }
+		| SHOW			{ printf("...Please enter param"); }
 		;
 
 %%
